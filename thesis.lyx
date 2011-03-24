@@ -1,0 +1,209 @@
+#LyX 1.6.9 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass extarticle
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Automated OpenAjax Hub Widget Generation for Deep Web Surfacing
+\end_layout
+
+\begin_layout Author
+Karli Kirsimäe
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Deep Web Surfacing
+\end_layout
+
+\begin_layout Standard
+Blah-blah
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Related Work
+\end_layout
+
+\begin_layout Standard
+Blah
+\end_layout
+
+\begin_layout Subsection
+Some other related work
+\end_layout
+
+\begin_layout Standard
+Blahblahblah
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Automated OpenAjax Hub Widget Generation
+\end_layout
+
+\begin_layout Standard
+The proposed solution for automated widget generation is divided in two
+ parts:
+\end_layout
+
+\begin_layout Enumerate
+the client side for creating javascript proxies
+\end_layout
+
+\begin_layout Enumerate
+and the server side for proxying to the actual service and generating required
+ metadata for the creation of client side proxy
+\end_layout
+
+\begin_layout Standard
+To generate a new widget, an URL for the WSDL must be provided along with
+ the name of the operation that the generated widget proxies.
+ Each widget can proxy only one operation from one WSDL, but the same mechanism
+ enables to generate many widgets that can all be used in one application.
+ One application can use only one widget for a unique combination of WSDL
+ URL and operation name.
+ The uniqueness of the definition itself is not checked, therefore it is
+ still possible to generate more than one proxy for the same SOAP endpoint
+ by simply using different WSDL locations.
+\end_layout
+
+\begin_layout Standard
+The generations starts on the client side, that triggers the initialization
+ of a new JavaScript proxy for a certain SOAP operation.
+ A unique topic name is used to register the generated widget in OpenAjax
+ Hub.
+ Client side then delegates to the TransformerWidget, that asks the server
+ for the definitions of the mappings for the generated proxy.
+ Server generates the mappings and sends them to the transformer widget.
+ When mappings also specified the location of a JSON Schema, that describes
+ the expected input for the widget, then this is also loaded from the server
+ by the TransformerWidget.
+ After that the proxy is ready to be called.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Flow diagram of the generation of SOAP proxy widget
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Implementation of the client side
+\end_layout
+
+\begin_layout Subsection
+Implementation of the server side
+\end_layout
+
+\end_body
+\end_document
